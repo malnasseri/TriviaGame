@@ -53,7 +53,7 @@ $(document).ready(function() {
 		var wrongAnswers = 0;
 		
 		var q1 = {
-			question: 'Inside which HTML element do we put the JavaScript?',
+			question: 'Inside which HTML element do we link the JavaScript?',
 			answers: ['A. <javascript>',
 					  'B. <js>',
 					  'C. <scripting>',
@@ -105,12 +105,12 @@ $(document).ready(function() {
  		
  		var q6 = {
  			question: 'How do you create a function in JavaScript?',
- 			answers: ['A. function myFunction()',
- 					  'B. function = myFunction()',
+ 			answers: ['A. function myFunction{}',
+ 					  'B. function = myFunction(){}',
  					  'C. function:myFunction()',
  					  'D. var myFunction = 0;'],
  		    flags: [false, true, false, false],
- 		    answer: 'B. function = myFunction()'
+ 		    answer: 'B. function = myFunction(){}'
  		};
 
  		var q7 = {
@@ -145,11 +145,11 @@ $(document).ready(function() {
 		var q10 = {
 			question: 'How does a FOR loop start?',
 			answers: ['A. for i = 1 to 5',
-					  'B. for (var i = 0; i <= 5; i++)',
+					  'B. for (var i = 0; i <= 5; i++){}',
 					  'C. for (i = 0; i <= 5)',
 					  'D. for (i <= 5; i++)'],
 			flags: [false, true, false, false],
-			answer: 'B. for (var i = 0; i <= 5; i++)'
+			answer: 'B. for (var i = 0; i <= 5; i++){}'
 		}
  			var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
 
