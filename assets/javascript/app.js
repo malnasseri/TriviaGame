@@ -172,7 +172,7 @@ $(document).ready(function() {
 				index = 0;
 
 	$(".choice").hide();
-	$('.question').append('<button id="startButton">Start The Game</button>');
+	$('.start').append('<button id="startButton">Start The Game</button>');
 	$('#startButton').on('click', function() {
 		$(this).hide();
 
