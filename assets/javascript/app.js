@@ -216,8 +216,17 @@ function showScore() {
 	$('.question').append("<h3><p>" + wrongAnswers + " Wrong </p></h3>");
 	timeCounter.stop();
 	$('.clock').empty();
-
+	if(correctAnswers == wrongAnswers) {
+		$(".clock").append("<h1>" + "Draw" + "</h1>");
+	}
+	else if(correctAnswers > wrongAnswers) {
+		$(".clock").append("<h1>" + "You Win" + "</h1>");
+	}
+	else if(correctAnswers < wrongAnswers) {
+		$(".clock").append("<h1>" + "You Lose" + "</h1>");
+	}
 }
+
 
 setup();
 
