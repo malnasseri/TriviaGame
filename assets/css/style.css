@@ -25,7 +25,6 @@ h1 {
 	color: black;
 	background-color: white;
 }
-
 .question {
 	max-width: 400px;
 	padding: 5px;
@@ -60,6 +59,6 @@ font-weight: 600;
 	color: red;
 	font-family: 'Kumar One', cursive;
 }
-
+button:focus {outline:0;}
 
 
