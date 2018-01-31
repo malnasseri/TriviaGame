@@ -21,10 +21,10 @@ h1 {
 	margin-bottom: 15px;
 	border:none;
 }
-.choice:hover {
+/*.choice:hover {
 	color: black;
 	background-color: white;
-}
+}*/
 .question {
 	max-width: 400px;
 	padding: 5px;
