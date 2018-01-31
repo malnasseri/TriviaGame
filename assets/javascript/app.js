@@ -3,12 +3,10 @@ $(document).ready(function() {
 
 	var index = 0;
 	var timeCounter = {
-		time: 30,
+		time: 15,
 		
-
-
 		reset: function() {
-			this.time = 30;
+			this.time = 15;
 			$('.clock').html('<h4>' + this.time + ' seconds</h4>');
 			},
 
@@ -16,19 +14,16 @@ $(document).ready(function() {
 			counter = setInterval(timeCounter.count, 1000);
 		},
 
-
 		stop: function() {
 
 			clearInterval(counter);
 		},
-
 
 		count: function() {
 
 			timeCounter.time--;
 			console.log(timeCounter.time);
 			
-
 			if(timeCounter.time >= 0) {
 				$(".clock").html("<h4>" + timeCounter.time + " seconds</h4>");
 			}
@@ -42,16 +37,11 @@ $(document).ready(function() {
 					$(".choice").hide();
 					showScore();
 				}
-
 			}
 			}
 		};	
-		
-	
-
 		var correctAnswers = 0;
 		var wrongAnswers = 0;
-		
 		var q1 = {
 			question: 'Inside which HTML element do we link the JavaScript?',
 			answers: ['A. <javascript>',
@@ -230,6 +220,8 @@ function showScore() {
 
 setup();
 
+
+
 $('.choice').on('click', function() {
  
  if(this.id == 'button1') {
@@ -277,4 +269,3 @@ if ((userChoice == '4') && (questions[index].flags[3] == true)) {
 });
 
 });
-

@@ -14,7 +14,7 @@ h1 {
 
 .choice {
 	background-color: black;
-	color: silver;
+	color: white;
 	font-family: 'Roboto Slab', serif;
 	font-size: 20px;
 	padding: 10px;
@@ -40,7 +40,7 @@ h1 {
 
 #startButton {
 	padding: 5px 10px 5px 10px;
-background-color: darkorange;
+background-color: orange;
 font-size: 20px;
 font-family: "arial";
 font-weight: 600;
@@ -60,5 +60,6 @@ font-weight: 600;
 	font-family: 'Kumar One', cursive;
 }
 button:focus {outline:0;}
+
 
 
