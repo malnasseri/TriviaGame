@@ -20,6 +20,8 @@ h1 {
 	padding: 10px;
 	margin-bottom: 15px;
 	border:none;
+		cursor: pointer;
+
 }
 .question {
 	max-width: 400px;
@@ -40,6 +42,7 @@ background-color: orange;
 font-size: 20px;
 font-family: "arial";
 font-weight: 600;
+cursor: pointer;
 
 
 }
