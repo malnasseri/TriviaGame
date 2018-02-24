@@ -172,6 +172,21 @@ $(document).ready(function() {
 	});
 
 }
+function restart() {
+				
+				index = 0;
+
+	
+	$('.start').append('<button id="restartButton">Play Again</button>');
+	$('#restartButton').on('click', function() {
+		$(this).hide();
+
+
+		timeCounter.start();
+	 	pushQuestion(index);
+	});
+
+}
 
 			function getAnswer() {
 
@@ -207,10 +222,10 @@ function showScore() {
 	timeCounter.stop();
 	$('.clock').empty();
 	if(correctAnswers == wrongAnswers) {
-		$(".clock").append("<h1>" + "Draw" + "</h1>");
+		$(".clock").append("<h1 class='draw'>" + "Draw" + "</h1>");
 	}
 	else if(correctAnswers > wrongAnswers) {
-		$(".clock").append("<h1>" + "You Win" + "</h1>");
+		$(".clock").append("<h1 class='win'>" + "You Win" + "</h1>");
 	}
 	else if(correctAnswers < wrongAnswers) {
 		$(".clock").append("<h1>" + "You Lose" + "</h1>");
@@ -265,6 +280,7 @@ if ((userChoice == '4') && (questions[index].flags[3] == true)) {
  } else {
  	$(".choice").hide();
  	showScore();
+ 	restart();
  }
 });
 

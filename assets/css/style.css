@@ -12,7 +12,12 @@ h1 {
 	font-size: 68px;
 	padding: 50px;
 }
-
+.win {
+	color: lightgreen !important;
+}
+.draw {
+	color: black;
+}
 .choice {
 	background-color: black;
 	color: white;
@@ -47,7 +52,15 @@ cursor: pointer;
 
 
 }
-#startButton:hover {
+#restartButton {
+	padding: 5px 10px 5px 10px;
+background-color: orange;
+font-size: 20px;
+font-family: "arial";
+font-weight: 600;
+cursor: pointer;
+}
+#startButton:hover, #restartButton:hover {
 	background-color: grey;
 	border: black solid 1px;
 	color: white;
