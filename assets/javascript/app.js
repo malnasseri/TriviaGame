@@ -172,21 +172,6 @@ $(document).ready(function() {
 	});
 
 }
-function restart() {
-				
-				index = 0;
-
-	
-	$('.start').append('<button id="restartButton">Play Again</button>');
-	$('#restartButton').on('click', function() {
-		$(this).hide();
-
-
-		timeCounter.start();
-	 	pushQuestion(index);
-	});
-
-}
 
 			function getAnswer() {
 
@@ -280,7 +265,6 @@ if ((userChoice == '4') && (questions[index].flags[3] == true)) {
  } else {
  	$(".choice").hide();
  	showScore();
- 	restart();
  }
 });
 
