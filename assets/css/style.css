@@ -342,4 +342,27 @@ margin-bottom: 40px;
 
 }
 
+@media only screen and (min-width : 1024px) and (max-width: 1279px){ 
+
+img.thisChoice {
+margin-left: 55px;
+margin-right: 0px;
+height: 170px;
+width: 170px;
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
