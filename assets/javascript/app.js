@@ -217,5 +217,5 @@ function scoreboard(){
 	$('#startOverBtn').addClass('reset');
 	$('#startOverBtn').addClass('btn btn-primary');
 	$('#startOverBtn').show();
-	$('#startOverBtn').html('Start Over');
+	$('#startOverBtn').html('Play Again');
 }
