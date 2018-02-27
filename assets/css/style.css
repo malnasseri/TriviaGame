@@ -354,13 +354,18 @@ width: 170px;
 
 
 }
+@media only screen and (min-width : 1280px) and (max-width: 1366px){ 
+
+
+#timeLeft h1 {
+	padding: 0;
+	margin: 0 auto;
+	margin-bottom: -25px;
+}
 
 
 
-
-
-
-
+}
 
 
 

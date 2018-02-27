@@ -134,7 +134,7 @@ function newQuestion(){
 }
 
 function countdown(){
-	seconds = 30;
+	seconds = 10;
 	$('#timeLeft').html('<h1>' + seconds + '</h1>');
 	answered = true;
 	//sets timer to go down
