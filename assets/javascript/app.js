@@ -1,271 +1,221 @@
 
-$(document).ready(function() {
 
-	var index = 0;
-	var timeCounter = {
-		time: 15,
-		
-		reset: function() {
-			this.time = 15;
-			$('.clock').html('<h4>' + this.time + ' seconds</h4>');
-			},
-
-		start: function() {
-			counter = setInterval(timeCounter.count, 1000);
-		},
-
-		stop: function() {
-
-			clearInterval(counter);
-		},
-
-		count: function() {
-
-			timeCounter.time--;
-			console.log(timeCounter.time);
-			
-			if(timeCounter.time >= 0) {
-				$(".clock").html("<h4>" + timeCounter.time + " seconds</h4>");
-			}
-			else {
-				index++;
-				wrong();
-				timeCounter.reset();
-			if (index < questions.length) {
-					pushQuestion(index);
-				} else {
-					$(".choice").hide();
-					showScore();
-				}
-			}
-			}
-		};	
-		var correctAnswers = 0;
-		var wrongAnswers = 0;
-		var q1 = {
-			question: 'Inside which HTML element do we link the JavaScript?',
-			answers: ['A. <javascript>',
-					  'B. <js>',
-					  'C. <scripting>',
-					  'D. <script>'],
-			flags: [false, false, false, true],
-			answer: 'D. <script>'
-		};
-
-		var q2 = {
-			question: 'What is the correct way to write a JavaScript array?',
-			answers: ['A. var colors = ["red", "green", "blue"];',
- 					  'B. var colors = 1 = ("red"), 2 = ("green"), 3 = ("blue");',
- 					  'C. var colors = "red", "green", "blue"',
- 					  'D. var colors = (1:"red", 2:"green", 3:"blue");'],
- 			flags: [true, false, false, false],
-			answer: 'A. var colors = ["red", "green", "blue"];'
-		};
-
-		var q3 = {
-			question: 'JavaScript is the same as Java.',
-
-			answers: ['A. True',
- 					  'B. False',
- 					  'C. Depends on the type of include',
- 					  'D. None of these'],
- 			flags: [false, true, false, false],
- 			answer: 'B. False'
-		};
-
-		var q4 = {
-			question: 'What is the correct syntax for referring to an external script called "xxx.js"?',
-			answers: ['A. <script link="xxx.js">',
-					  'B. <script name="xxx.js">',
- 					  'C. <script href="xxx.js">',
- 					  'D. <script src="xxx.js">'],
- 			flags: [false, false, false, true],
- 			answer: 'D. <script src="xxx.js">'
- 		};
-
- 		var q5 = {
- 			question: 'How do you write "Hello World" in an alert box?',
- 			answers: ['A. alertBox("Hello World");',
- 					  'B. msgBox("Hello World");',
-                      'C. alert("Hello World");',
- 					  'D. msg("Hello World");'],
- 			flags: [false, false, true, false],
- 			answer: 'C. alert("Hello World")'
- 		};
- 		
- 		var q6 = {
- 			question: 'How do you create a function in JavaScript?',
- 			answers: ['A. function myFunction{}',
- 					  'B. function = myFunction(){}',
- 					  'C. function:myFunction()',
- 					  'D. var myFunction = 0;'],
- 		    flags: [false, true, false, false],
- 		    answer: 'B. function = myFunction(){}'
- 		};
-
- 		var q7 = {
- 			question: 'How do you call a function named "myFunction"?',
- 			answers: ['A. myFunction()',
- 				      'B. call function myFunction()',
- 				      'C. call myFunction()',
- 				      'D. myFunction.html()'],
- 			flags: [true, false, false, false],
- 			answer: 'A. myFunction()'
-		};
-
-		var q8 = {
-			question: 'How to write an IF statement in JavaScript?',
-			answers: ['A. if i = 5',
-					  'B. if i = 5 then',
-					  'C. if (i == 5)',
-					  'D. if i == 5 then'],
-			flags: [false, false, true, false],
-			answer: 'C. if (i == 5)'
-		};
-
-		var q9 = {
-			question: 'How to write an IF statement for executing some code if "i" is NOT equal to 5?',
-			answers: ['A. if (i != 5)',
-					  'B. if i <= 5',
-					  'C. if (i >= 5)',
-					  'D. if i =! 5 then'],
-			flags: [true, false, false, false],		  
-			answer: 'A. if (i != 5)'
-		};
-		var q10 = {
-			question: 'How does a FOR loop start?',
-			answers: ['A. for i = 1 to 5',
-					  'B. for (var i = 0; i <= 5; i++){}',
-					  'C. for (i = 0; i <= 5)',
-					  'D. for (i <= 5; i++)'],
-			flags: [false, true, false, false],
-			answer: 'B. for (var i = 0; i <= 5; i++){}'
-		}
- 			var questions = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
-
- 			function pushQuestion(selectQuestion) {
- 				console.log(selectQuestion);
-
- 				timeCounter.reset();
-  $(".question").html("<h4>" + questions[selectQuestion].question + "</h4>");
+var triviaQuestions = [{
+	question: "Which one of these princesses is NOT part of Disney’s official princess lineup?",
+	answerList: ["Rapunzel", "Merida", "Elsa", "Pocahontas"],
+	img: ['./assets/images/Rapunzel.png', './assets/images/Merida.png','./assets/images/Elsa.png', './assets/images/pocahontas.png'],
+	answer: 2
+},{
+	question: "Which popular Disney character makes an appearance as a stuffed animal in Frozen?",
+	answerList: ["Winnie the Pooh", "Mickey Mouse", "Tinker Bell", "Mr. Potato Head"],
+	img: ['./assets/images/winnie.png', './assets/images/mickey.png','./assets/images/tinker.png', './assets/images/potato.png'],
+	answer: 1
+},{
+	question: "Who was the first Disney princess?",
+	answerList: ["Cinderella", "Pocahontas", "Aurora", "Snow White"],
+	img: ['./assets/images/cinderella.png', './assets/images/pocahontas.png','./assets/images/aurora.png', './assets/images/snow.png'],
+	answer: 3
+},{
+	question: "Who slips the glass slipper onto Cinderella's foot?",
+	answerList: ["The Prince", "The Footman", "The King", "The Duke"],
+	img: ['./assets/images/prince.png', './assets/images/foot.png','./assets/images/king.png', './assets/images/duke.png'],
+	answer: 3
+},{
+	question: "Which of these Disney characters falls down a rabbit hole and emerges in a far away land?",
+	answerList: ["Pinocchio", "Aladdin", "Alice", "Jasmine"],
+	img: ['./assets/images/pinocchio.png', './assets/images/aladdin.png','./assets/images/alice.png', './assets/images/jasmine.png'],
+	answer: 2
+},{
+	question: "Which of these Disney characters is very much against growing up?",
+	answerList: ["Tinkerbell", "Simba", "Peter Pan", "Tarzan"],
+	img: ['./assets/images/tinker.png', './assets/images/simba.png','./assets/images/peter.png', './assets/images/tarzan.png'],
+	answer: 2
+},{
+	question: "Which disney villain is described as a 'Fat, Fompous, Bad-tempered old tyrant.'?",
+	answerList: ["Queen of Hearts", "Ursula", "Evil Queen", "Scar"],
+	img: ['./assets/images/queen.png', './assets/images/ursula.png','./assets/images/evil.png', './assets/images/scar.png'],
+	answer: 0
+},{
+	question: "In 'Sleeping Beauty', Who stabs Maleficent?",
+	answerList: ["Merry Weather", "The King", "Prince Philip", "Aurora"],
+	img: ['./assets/images/merry.png', './assets/images/aurora-king.png','./assets/images/aurora-prince.png', './assets/images/aurora.png'],
+	answer: 2
+},{
+	question: "Which Disney villain did NOT fall (then eventually die)?",
+	answerList: ["Scar", "Queen of Hearts", "Gaston", "Maleficent"],
+	img: ['./assets/images/scar.png', './assets/images/queen.png','./assets/images/gaston.png', './assets/images/maleficent.png'],
+	answer: 1
+},{
 
 
-  $("#button1").text(questions[selectQuestion].answers[0]).show();
-  $("#button2").text(questions[selectQuestion].answers[1]).show();
-  $("#button3").text(questions[selectQuestion].answers[2]).show();
-  $("#button4").text(questions[selectQuestion].answers[3]).show();
-				
-				}
-
-			function setup() {
-				
-				index = 0;
-
-	$(".choice").hide();
-	$('.start').append('<button id="startButton">Start The Game</button>');
-	$('#startButton').on('click', function() {
-		$(this).hide();
 
 
-		timeCounter.start();
-	 	pushQuestion(index);
+
+
+	question: "Which Disney villain says: 'Skip the drama, stay with mama'?",
+	answerList: ["Mother Gothel", "Cruella Devil", "Ursula", "Evil Queen"],
+	img: ['./assets/images/mother.png', './assets/images/cruella.png','./assets/images/ursula.png', './assets/images/evil.png'],
+	answer: 0
+}
+];
+var search = ['disney+frozen+elsa+snowflake+lick', 'disney+mickey+mouse+love', 'disney+snow+white', 'disney+shoes+cinderella+fairy tales', 'disney+wounderland+alice', 'disney+peter+pan', 'alice+in+wonderland+queen+of+hearts', 'disney+confident+sleeping+beauty', 'disney+thank+you+alice', 'disney+tangled+repunzel'];
+var currentQuestion; var correctAnswer; var incorrectAnswer; var unanswered; var seconds; var time; var answered; var userSelect;
+var messages = {
+	correct: "Yes, that's right!",
+	incorrect: "Nope, that's not it.",
+	endTime: "Out of time!",
+	finished: "Final Scores"
+}
+$("#q-div").hide();
+$("#message-div").hide();
+$("#score-board").hide();
+
+$('#startBtn').on('click', function(){
+	$('#about-div').hide();
+	$('#main-header').hide();
+	newGame();
+});
+
+$('#startOverBtn').on('click', function(){
+	$(this).hide();
+	newGame();
+});
+
+function newGame(){
+	$("#score-board").hide();
+	$('#finalMessage').empty();
+	$('#correctAnswers').empty();
+	$('#incorrectAnswers').empty();
+	$('#unanswered').empty();
+	$("#message-div").hide();
+	currentQuestion = 0;
+	correctAnswer = 0;
+	incorrectAnswer = 0;
+	unanswered = 0;
+	newQuestion();
+}
+
+function newQuestion(){
+	$('#message').empty();
+	$('#correctedAnswer').empty();
+	$('#gif').empty();
+	$("#q-div").show();
+	$("#message-div").hide();
+	$("#score-board").hide();
+	answered = true;
+	
+	//sets up new questions & answerList
+	$('#currentQuestion').html('Question '+(currentQuestion+1)+'/'+triviaQuestions.length);
+	$('.question').html('<h3>' + triviaQuestions[currentQuestion].question + '</h3>');
+	for(var i = 0; i < 4; i++){
+		var choices = $('<div>');
+		var images = $('<img width="200" height="200">');
+		// choices.text(triviaQuestions[currentQuestion].answerList[i]);
+		choices.attr({'data-index': i });
+		choices.addClass('thisChoice');
+		images.attr({'data-index': i });
+		images.addClass('thisChoice');
+		images.addClass('grid-1-5');
+		// images.addClass('responsive-image');
+		images.addClass('images');
+
+		images.attr('src', triviaQuestions[currentQuestion].img[i]);
+		$('.answerList').append(choices);
+		$('.answerList').append(images);
+	}
+	countdown();
+	//clicking an answer will pause the time and setup answerPage
+	$('.thisChoice').on('click',function(){
+		userSelect = $(this).data('index');
+
+		clearInterval(time);
+		answerPage();
 	});
-
 }
 
-			function getAnswer() {
-
-
-	$('.choice').on('click', function() {
-	  
-		index++;
-		
-		$(".question").text('');
-		$("#button1").text('');
-		$("#button2").text('');
-		$("#button3").text('');
-		$("#button4").text('');
-		pushQuestion();
-	})
+function countdown(){
+	seconds = 30;
+	$('#timeLeft').html('<h1>' + seconds + '</h1>');
+	answered = true;
+	//sets timer to go down
+	time = setInterval(showCountdown, 1000);
 }
 
-
-		function correct() {
-	correctAnswers++;
-	
+function showCountdown(){
+	seconds--;
+	$('#timeLeft').html('<h1>' + seconds + '</h1>');
+	if(seconds < 1){
+		clearInterval(time);
+		answered = false;
+		answerPage();
+	}
 }
 
-		function wrong() {
-	wrongAnswers++;
-	
-}
-
-function showScore() {
+function answerPage(){
+	$('#currentQuestion').empty();
+	$('.thisChoice').empty(); //Clears question page
 	$('.question').empty();
-	$('.question').append("<h3><p>" + correctAnswers + " Correct </p></h3>");
-	$('.question').append("<h3><p>" + wrongAnswers + " Wrong </p></h3>");
-	timeCounter.stop();
-	$('.clock').empty();
-	if(correctAnswers == wrongAnswers) {
-		$(".clock").append("<h1 class='draw'>" + "Draw" + "</h1>");
+	$('.images').hide();
+	$('#timeLeft').empty();
+	$("#q-div").hide();
+	$("#message-div").show();
+	$("#score-board").hide();
+
+
+
+
+	var rightAnswerText = triviaQuestions[currentQuestion].answerList[triviaQuestions[currentQuestion].answer];
+	var rightAnswerIndex = triviaQuestions[currentQuestion].answer;
+
+	//giphy api
+	var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + search[currentQuestion] + "&limit=1&rating=g&api_key=dc6zaTOxFJmzC"
+	$.ajax({url: giphyURL, method: 'GET'}).done(function(giphy){
+		var currentGif = giphy.data;
+		$.each(currentGif, function(index,value){
+		var embedGif = value.images.original.url;
+		newGif = $('<img width="400" height="300">');
+		newGif.attr('src', embedGif);
+		newGif.addClass('gifImg');
+		$('#gif').html(newGif);
+		});
+	});
+	//checks to see correct, incorrect, or unanswered
+	if((userSelect == rightAnswerIndex) && (answered == true)){
+		correctAnswer++;
+		$('#message').html(messages.correct);
+	} else if((userSelect != rightAnswerIndex) && (answered == true)){
+		incorrectAnswer++;
+		$('#message').html(messages.incorrect);
+		$('#correctedAnswer').html("'" + rightAnswerText + "'" + ' ' + 'was the right answer!');
+	} else{
+		unanswered++;
+		$('#message').html(messages.endTime);
+		$('#correctedAnswer').html("'" + rightAnswerText + "'" + ' ' + 'was the right answer!');
+		answered = true;
 	}
-	else if(correctAnswers > wrongAnswers) {
-		$(".clock").append("<h1 class='win'>" + "You Win" + "</h1>");
-	}
-	else if(correctAnswers < wrongAnswers) {
-		$(".clock").append("<h1>" + "You Lose" + "</h1>");
-	}
+	
+	if(currentQuestion == (triviaQuestions.length-1)){
+		setTimeout(scoreboard, 5000)
+	} else{
+		currentQuestion++;
+		setTimeout(newQuestion, 5000);
+	}	
 }
 
+function scoreboard(){
+	$('#timeLeft').empty();
+	$('#message').empty();
+	$('#correctedAnswer').empty();
+	$('#gif').empty();
+	$("#message-div").hide();
+	$("#score-board").show();
 
-setup();
-
-
-
-$('.choice').on('click', function() {
- 
- if(this.id == 'button1') {
- 	var userChoice = '1';
- } else if(this.id == 'button2') {
- 	userChoice = '2';
- } else if (this.id == 'button3') {
- 	userChoice = '3';
- } else if (this.id == 'button4') {
- 	userChoice = '4';
- } 
- if ((userChoice == '1') && (questions[index].flags[0] == true)) {
- 	correct();
- } else if (userChoice == '1') {
- 	wrong();
- }
- if ((userChoice == '2') && (questions[index].flags[1] == true)) {
- 	correct();
- } else if (userChoice == '2') {
- 	wrong();
- }
-if ((userChoice == '3') && (questions[index].flags[2] == true)) {
- 	correct();
- } else if (userChoice == '3') {
- 	wrong();
- }
-if ((userChoice == '4') && (questions[index].flags[3] == true)) {
- 	correct();
- } else if (userChoice == '4') {
- 	wrong();
- }
-
- $(".question").text('');
- $("#button1").text('');
- $("#button2").text('');
- $("#button3").text('');
- $("#button4").text('');
- index++;
- if (index < questions.length) {
- 	pushQuestion(index);
- } else {
- 	$(".choice").hide();
- 	showScore();
- }
-});
-
-});
+	$('#finalMessage').html(messages.finished);
+	$('#correctAnswers').html("Correct: " + correctAnswer);
+	$('#incorrectAnswers').html("Incorrect: " + incorrectAnswer);
+	$('#unanswered').html("Unanswered: " + unanswered);
+	$('#startOverBtn').addClass('reset');
+	$('#startOverBtn').addClass('btn btn-primary');
+	$('#startOverBtn').show();
+	$('#startOverBtn').html('Start Over');
+}

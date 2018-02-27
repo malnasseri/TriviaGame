@@ -1,51 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Disney Trivia</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Sigmar+One" rel="stylesheet">
+	<link href="assets/css/reset.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+	<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<!-- <img src= 'assets/images/pixarHeaderJr.jpg' alt = 'headerImg' width = '100%'> -->
+	</header>
+
+	<div class = 'container'>
+		<div class="row">
+			<div class="col-xs-12">
+				<h1 id="main-header">Disney Trivia</h1>
+			</div>
+			<div class="col-xs-12">
+				<div id="about-div">
+					<p>Check how well you know Disney characters!</p>
+					<p>You have 10 Questions and 10 Seconds to answer each question.</p>
+					<p>Get Started!</p>
+						<button class = 'btn btn-primary' id = 'startBtn'>Start</button>
+				</div>
+			</div>
+
 	
-	<head>
-		<title>Trivia Game</title>
-		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Architects+Daughter|Barrio|Bree+Serif|Gloria+Hallelujah|Kaushan+Script|Kumar+One|Modak|Montserrat+Subrayada|Pacifico|Patua+One|Roboto+Mono" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		
-		
-	</head>
-	<body>
-		<h1>Totally Trival Trivia!</h1>
-		<div class="clock">
-		</div>
-		
-		<div class="start">
-		
-		</div>
-		<div class="question">
-		</div>
-		<br>
-		<div class="options">
-			<div>
-				<button class="choice" id="button1">
-				</button>
-			</div>
-			<div>
-				<button class="choice" id="button2">
-				</button>
-			</div>
-			<div>
-				<button class="choice" id="button3">
-				</button>
-			</div>
-			<div>
-				<button class="choice" id="button4">
-				</button>
-			</div>
 			
 		</div>
-		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-		integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
-		crossorigin="anonymous">
-		</script>
-		<script src="assets/javascript/app.js" type="text/javascript"></script>
 
-	</body>
+
+
+			<!-- Question page -->
+			<div id = "timeLeft"></div> 
+			<div id="message-div">
+			<div id = message></div>
+			<div id = correctedAnswer></div>
+		</div>
+			<div id = gif></div>
+
+
+
+			<div id="q-div">
+			<div id = "currentQuestion"></div> 
+			
+			<div class = 'question'></div>
+				</div>
+				<!-- Answer Page -->
+		
+					
+					<div class = 'answerList'>
+						
+					</div>
+				
+
+		
+		
+			<!-- Scoreboard -->
+			<div id = score-board>
+			<div id = finalMessage></div>
+			<div id = correctAnswers></div>
+			<div id = incorrectAnswers></div>
+			<div id = unanswered></div>
+			<div id = 'startOverBtn'></div>
+		</div>
+		</div>
+
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script type = "text/javascript" src="assets/javascript/app.js"></script>
+</body>
 </html>
