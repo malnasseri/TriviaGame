@@ -306,6 +306,8 @@ img.thisChoice {
 margin-left: 23px;
 height: 130px;
 width: 130px;
+border:0;
+padding: 0;
 }
 #message, #correctedAnswer {
 	font-size: 18px;
