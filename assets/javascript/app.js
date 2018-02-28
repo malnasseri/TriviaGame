@@ -102,6 +102,7 @@ function newQuestion(){
 	$("#q-div").show();
 	$("#message-div").hide();
 	$("#score-board").hide();
+	$("#win").empty();
 	answered = true;
 	
 	//sets up new questions & answerList
@@ -208,6 +209,17 @@ function scoreboard(){
 	$('#correctedAnswer').empty();
 	$('#gif').empty();
 	$("#message-div").hide();
+	var win = $('<h1> YOU WIN </h1>');
+	var lose = $('<h1> YOU LOSE </h1>');
+	if(correctAnswer == 5 || correctAnswer > 5){
+		$("#win").append(win);
+	}
+	else {
+		$("#win").append(lose);
+	}
+
+
+
 	$("#score-board").show();
 
 	$('#finalMessage').html(messages.finished);

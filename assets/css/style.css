@@ -25,6 +25,11 @@ background: rgba(33, 33, 33, .4);
 	border-radius: 0.8rem;
 	font: 540 24px "Lato","Open Sans","Helvetica Neue",Arial,sans-serif;
 }
+#win {
+	color: white;
+	font-family: 'Sigmar One', sans-serif;
+
+}
 #finalMessage {
 	margin-bottom: 25px;
 }
